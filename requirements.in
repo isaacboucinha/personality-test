@@ -1,0 +1,23 @@
+
+# django
+django==4.0.1  # Latest LTS version
+django-extensions
+djangorestframework==3.12.4
+django-simple-history==3.0.0
+django-environ
+
+# Tests
+factory_boy
+redgreenunittest
+
+# Coverage
+coverage==5.5
+coverage-badge==1.1.0
+
+# Convenience
+ipython
+pip-tools
+
+# Linting
+flake8
+black==21.8b0 
