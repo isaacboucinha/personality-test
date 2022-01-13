@@ -35,8 +35,8 @@ class ActiveTimestampedModel(TimestampedModel):
 
 
 class User(AbstractUser, TimestampedModel):
-    email = None # disable the AbstractUser.email field
+    email = None  # disable the AbstractUser.email field
     username = models.TextField(max_length=64)
-    
+
     def __str__(self):
         return self.username

@@ -1,0 +1,13 @@
+# constrained for existing requirements
+-c requirements.txt
+
+# For hook management
+pre-commit
+
+# Convenience
+ipython
+pip-tools
+
+# Linting
+flake8
+black==21.12b0

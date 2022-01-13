@@ -13,11 +13,3 @@ redgreenunittest
 # Coverage
 coverage==5.5
 coverage-badge==1.1.0
-
-# Convenience
-ipython
-pip-tools
-
-# Linting
-flake8
-black==21.8b0 

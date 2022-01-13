@@ -20,6 +20,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+node_modules
 develop-eggs/
 dist/
 downloads/
@@ -78,12 +79,13 @@ ipython_config.py
 
 .DS_Store
 
-# postgres local volume
-pgdata
-
 # Django stuff:
 *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
 staticfiles
+
+# Requirements
+requirements-dev.txt
+requirements.txt

@@ -1,6 +1,13 @@
 
-include config/.env
+include .env
 export
+
+install:
+	pip-compile
+	pip-compile requirements-dev.in
+	pip-sync requirements.txt requirements-dev.txt
+	pre-commit install
+	pre-commit run --all-files
 
 createuser:
 	python manage.py createsuperuser --database default
