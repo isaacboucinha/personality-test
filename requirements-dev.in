@@ -11,3 +11,6 @@ pip-tools
 # Linting
 flake8
 black==21.12b0
+
+# Waitress server
+waitress
