@@ -6,6 +6,9 @@ move-static-files:
 	chmod +x ./scripts/move_static_files_to_whitenoise_root.sh
 	sh ./scripts/move_static_files_to_whitenoise_root.sh
 
+collectstatic:
+	python manage.py collectstatic --no-input
+
 install:
 	pip-compile
 	pip-compile requirements-dev.in
