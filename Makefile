@@ -2,12 +2,21 @@
 include .env
 export
 
+move-static-files:
+	chmod +x ./scripts/move_static_files_to_whitenoise_root.sh
+	sh ./scripts/move_static_files_to_whitenoise_root.sh
+
 install:
 	pip-compile
 	pip-compile requirements-dev.in
 	pip-sync requirements.txt requirements-dev.txt
 	pre-commit install
 	pre-commit run --all-files
+	cd frontend && yarn install && yarn build && cd ..
+	make move-static-files
+
+wsgi-server:
+	waitress-serve config.wsgi:application
 
 createuser:
 	python manage.py createsuperuser --database default

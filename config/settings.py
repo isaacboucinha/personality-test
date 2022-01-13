@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+import os
 import environ
 
 # Initialise environment variables
@@ -27,7 +28,7 @@ environ.Env.read_env()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 BACKEND_DIR = BASE_DIR  # rename variable for clarity
 FRONTEND_DIR = BASE_DIR.parent / "frontend"
 
@@ -55,11 +56,13 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -85,6 +88,9 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DIRS = (os.path.join(FRONTEND_DIR, "build"),)
+
 
 WSGI_APPLICATION = "config.wsgi.application"
 
@@ -134,7 +140,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATICFILES_DIRS = [FRONTEND_DIR / "build" / "static"]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+STATIC_ROOT = BACKEND_DIR / "static"
+
+STATIC_URL = "/static/"  # already declared in the default settings
+
+WHITENOISE_ROOT = FRONTEND_DIR / "build" / "root"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
