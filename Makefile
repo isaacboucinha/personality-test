@@ -17,6 +17,7 @@ install:
 	pre-commit run --all-files
 	cd frontend && yarn install && yarn build && cd ..
 	make move-static-files
+	make collectstatic
 
 wsgi-server:
 	waitress-serve config.wsgi:application

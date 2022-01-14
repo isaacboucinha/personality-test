@@ -1,10 +1,6 @@
 import uuid
 
-from django.contrib.auth.models import AbstractUser
 from django.db import models
-
-# TODO load thrasio_service_core from artifactory
-# from thrasio_service_core.django.models import TimestampedModel
 
 
 class TimestampedModel(models.Model):
@@ -32,11 +28,3 @@ class ActiveTimestampedModel(TimestampedModel):
 
     class Meta(TimestampedModel.Meta):
         abstract = True
-
-
-class User(AbstractUser, TimestampedModel):
-    email = None  # disable the AbstractUser.email field
-    username = models.TextField(max_length=64)
-
-    def __str__(self):
-        return self.username

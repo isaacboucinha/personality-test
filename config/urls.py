@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
-import backend.views as views
+
+import backend.frontend_views as frontend
 
 urlpatterns = [
     # backoffice is disabled
     # path('admin/', admin.site.urls),
-    re_path(r"", views.catchall),
+    re_path(r"", frontend.catchall),
 ]
