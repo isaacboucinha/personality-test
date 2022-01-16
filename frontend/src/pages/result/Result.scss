@@ -1,0 +1,43 @@
+
+.Result-maincontent {
+    font-family: Goldplay;
+    color: #0f393b !important;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    margin-bottom: 2pc;
+}
+
+.Result-intro {
+    font-family: GoldplayAltBold;
+    font-weight: 700 !important;
+    font-size: 1.375rem;
+    text-align: center !important;
+    padding: 1pc;
+}
+
+.Result-regrettablesummary {
+    font-family: GoldplayLight;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 0.65rem;
+    color: #3d5e5f !important;
+    text-align: center !important;
+    margin-top: 5pc;
+}
+
+.Result-personalitytype {
+    font-family: GoldplayAltBold;
+    font-weight: 700 !important;
+    font-size: 1.20rem;
+    text-align: center !important;
+}
+
+.Result-confusingexplanation {
+    padding-bottom: 4rem;
+}

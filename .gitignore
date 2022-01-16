@@ -90,3 +90,6 @@ static
 # Requirements
 requirements.txt
 requirements-dev.txt
+
+# personal todo list
+todolist.txt

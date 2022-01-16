@@ -1,0 +1,14 @@
+.FadeableContainer-showing {
+    opacity: 1 !important;
+    transition: all 250ms linear;
+  }
+  
+.FadeableContainer-hidden {
+    opacity: 0 !important;
+    transition: all 250ms linear;
+}
+
+.FadeableContainer-main {
+    width: 100%;
+    height: 100%;
+}

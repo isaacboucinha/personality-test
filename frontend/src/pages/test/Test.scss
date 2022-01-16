@@ -1,0 +1,34 @@
+.Test-maincontent {
+    font-family: Goldplay;
+    color: #0f393b !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 10rem;
+    height: 100%;
+    text-align: center; 
+}
+
+.Test-title {
+    font-family: GoldplayAltBold;
+    margin-bottom: 4rem;
+}
+
+.Test-questiontitle {
+    font-family: GoldplayAltBold;
+}
+
+.Test-questioncontainer {
+    font-size: 25px;
+    padding-bottom: 3rem;
+}
+
+.Test-questionoptions {
+    padding: 0rem 3rem;
+    padding-bottom: 2rem;
+}
+
+.Test-questionoptions {
+    font-size: 20px;
+    text-align: left;
+}

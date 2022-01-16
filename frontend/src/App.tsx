@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+import {
+  Route,
+  Routes
+} from "react-router-dom";
+
+import Footer from './common/footer/Footer';
+import Header from './common/header/Header';
+import Result from './pages/result/Result';
+import Splash from './pages/splash/Splash';
+import Test from './pages/test/Test';
+
+const routes = [
+  { path: "/", name: 'Splash', element: <Splash /> },
+  { path: "/result", name: 'Result', element: <Result /> },
+  { path: "/test", name: 'Test', element: <Test /> },
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App-maincontainer">
+      <Header />
+      <div className="App-subcontainer">
+        <div className="App-content">
+          <Routes>
+            {routes.map(({ path, name, element }) => (
+              <Route path={`${path}`} key={`${name}`} element={element} />
+            ))}
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 }

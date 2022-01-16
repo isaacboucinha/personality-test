@@ -1,0 +1,95 @@
+.App-maincontainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #EEEBE3;
+}
+
+.App-subcontainer {
+  top: 77px;
+  z-index: 200;
+  position: absolute;
+  min-height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: #EEEBE3;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 88%;
+}
+
+.App-content {
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F3EE;
+  padding: 40px;
+  margin: 80px;
+  margin-bottom: 0px;
+  box-shadow: 0 4px 25px rgb(0 0 0 / 5%);
+  border: 0 solid rgba(15,57,59,.3);
+  border-radius: 0.4375rem;
+}
+
+
+.next-exit-active {
+  animation: leaveToLeft 500ms both cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 0;
+}
+
+.next-enter-active {
+  animation: enterFromRight 500ms both cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 1;
+}
+
+.prev-exit-active {
+  animation: leaveToRight 500ms both cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 1;
+}
+
+.prev-enter-active {
+  animation: enterFromLeft 3000ms both cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 0;
+}
+
+@keyframes leaveToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+    filter: brightness(0.5);
+  }
+}
+
+@keyframes enterFromLeft {
+  from {
+    transform: translateX(-25%);
+    filter: brightness(0.5);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leaveToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes enterFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
