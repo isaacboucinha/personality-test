@@ -1,21 +1,18 @@
-import './App.scss';
+import "./App.scss";
 
-import {
-  Route,
-  Routes
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-import Footer from './common/footer/Footer';
-import Header from './common/header/Header';
-import Result from './pages/result/Result';
-import Splash from './pages/splash/Splash';
-import Test from './pages/test/Test';
+import Footer from "./common/footer/Footer";
+import Header from "./common/header/Header";
+import Result from "./pages/result/Result";
+import Splash from "./pages/splash/Splash";
+import Test from "./pages/test/Test";
 
 const routes = [
-  { path: "/", name: 'Splash', element: <Splash /> },
-  { path: "/result", name: 'Result', element: <Result /> },
-  { path: "/test", name: 'Test', element: <Test /> },
-]
+  { path: "/", name: "Splash", element: <Splash /> },
+  { path: "/result", name: "Result", element: <Result /> },
+  { path: "/test", name: "Test", element: <Test /> },
+];
 
 function App() {
   return (

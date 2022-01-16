@@ -1,48 +1,48 @@
 .Button-container {
-    text-align: center;
+  text-align: center;
 }
 
 .Button-main {
-    background: #347362;
-    color: #f5f3ee;
-    border-color: #347362;
-    display: inline-block;
-    font-weight: 600;
-    padding: 0.40625rem 1rem;
-    font-size: 0.875rem;
-    line-height: 1.3125rem;
-    border-radius: 0.4375rem;
-    border: 0.125rem solid transparent;
-    user-select: none;
-    cursor: pointer;
-    transition: all .35s ease-in-out,all .35s ease-in-out;
-    width: 11rem;
-    font-family: 'GoldplayAltBold';
+  background: #347362;
+  color: #f5f3ee;
+  border-color: #347362;
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.40625rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  border-radius: 0.4375rem;
+  border: 0.125rem solid transparent;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.35s ease-in-out, all 0.35s ease-in-out;
+  width: 11rem;
+  font-family: "GoldplayAltBold";
+
+  &:hover {
+    background: #2e6657;
+    border-color: #2e6657;
+  }
+
+  &:focus-visible {
+    outline: 0;
+    background: #2e6657;
+    border-color: #2e6657;
+  }
+
+  &.disabled {
+    background: #b0c3b8;
+    border-color: #b0c3b8;
+    cursor: default;
 
     &:hover {
-        background: #2e6657;
-        border-color: #2e6657;
+      background: #b0c3b8;
+      border-color: #b0c3b8;
     }
 
     &:focus-visible {
-        outline: 0;
-        background: #2e6657;
-        border-color: #2e6657;
+      background: #b0c3b8;
+      border-color: #b0c3b8;
     }
-
-    &.disabled {
-        background: #B0C3B8;
-        border-color: #B0C3B8;
-        cursor: default;
-
-        &:hover {
-            background: #B0C3B8;
-            border-color: #B0C3B8;
-        }
-
-        &:focus-visible {
-            background: #B0C3B8;
-            border-color: #B0C3B8;
-        }
-    }
+  }
 }

@@ -1,27 +1,25 @@
-
-
 .Header-maincontainer {
-    position: fixed;
-    width: 100%;
-    background-color: #347362;
-    height: 15%;
-    padding: 0 2rem 0 1rem;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    z-index: 100 !important;
+  position: fixed;
+  width: 100%;
+  background-color: #347362;
+  height: 15%;
+  padding: 0 2rem 0 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100 !important;
 }
 
 .Header-logo {
-    top: 13px;
-    position: absolute;
-};
+  top: 13px;
+  position: absolute;
+}
 
 .Header-title {
-    top: 6px;
-    right: 8pc;
-    position: absolute;
-    font-family: GoldplayAltBold;
-    color: #F5F3EE;
-    font-size: 1.5pc;
-};
+  top: 6px;
+  right: 8pc;
+  position: absolute;
+  font-family: GoldplayAltBold;
+  color: #f5f3ee;
+  font-size: 1.5pc;
+}
