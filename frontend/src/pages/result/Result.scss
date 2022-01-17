@@ -1,8 +1,6 @@
 .Result-maincontent {
   font-family: Goldplay;
   color: #0f393b !important;
-  display: flex;
-  flex-direction: column;
   padding: 1rem 10rem;
   display: flex;
   flex-direction: column;
@@ -15,7 +13,7 @@
 .Result-intro {
   font-family: GoldplayAltBold;
   font-weight: 700 !important;
-  font-size: 1.375rem;
+  font-size: 2rem;
   text-align: center !important;
   padding: 1pc;
 }
@@ -24,7 +22,7 @@
   font-family: GoldplayLight;
   line-height: 1.5;
   font-weight: 500;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   color: #3d5e5f !important;
   text-align: center !important;
   margin-top: 5pc;
@@ -33,7 +31,7 @@
 .Result-personalitytype {
   font-family: GoldplayAltBold;
   font-weight: 700 !important;
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-align: center !important;
 }
 

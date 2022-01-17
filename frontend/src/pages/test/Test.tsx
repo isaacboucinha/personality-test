@@ -152,33 +152,35 @@ function Test() {
   });
 
   return (
-    <div className="Test-maincontent">
-      <FadeableContainer isShowing={isShowing}>
+    <FadeableContainer isShowing={isShowing}>
+      <div className="Test-maincontent">
         <h1 className="Test-title">Test</h1>
         <div className="Test-questionmaincontainer">
           <FadeableContainer isShowing={questionIsShowing}>
-            <div className="Test-questioncontainer">
-              <span className="Test-questiontitle">
-                Question {questionNumber + 1}:{" "}
-              </span>
-              <span className="Test-questioncontent">
-                {questions[questionNumber].question}
-              </span>
+            <div className="Test-questionmaincontainer">
+              <div className="Test-questioncontainer">
+                <span className="Test-questiontitle">
+                  Question {questionNumber + 1}:{" "}
+                </span>
+                <span className="Test-questioncontent">
+                  {questions[questionNumber].question}
+                </span>
+              </div>
+              <div className="Test-questionoptions">
+                <OptionPicker
+                  options={questions[questionNumber].answers}
+                  onOptionChange={handleOptionPicking}
+                  currentlyPickedOption={currentAnswer}
+                />
+              </div>
+              <Button onClick={handleButtonClick} disabled={currentAnswer === -1}>
+                Next question
+              </Button>
             </div>
-            <div className="Test-questionoptions">
-              <OptionPicker
-                options={questions[questionNumber].answers}
-                onOptionChange={handleOptionPicking}
-                currentlyPickedOption={currentAnswer}
-              />
-            </div>
-            <Button onClick={handleButtonClick} disabled={currentAnswer === -1}>
-              Next question
-            </Button>
           </FadeableContainer>
         </div>
-      </FadeableContainer>
-    </div>
+      </div>
+    </FadeableContainer>
   );
 }
 

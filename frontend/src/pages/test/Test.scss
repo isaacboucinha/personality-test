@@ -3,7 +3,7 @@
   color: #0f393b !important;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   padding: 1rem 10rem;
   height: 100%;
   text-align: center;
@@ -24,11 +24,13 @@
 }
 
 .Test-questionoptions {
-  padding: 0rem 3rem;
-  padding-bottom: 2rem;
-}
-
-.Test-questionoptions {
   font-size: 20px;
   text-align: left;
+  padding: 0rem 3rem;
+  padding-bottom: 2rem;
+  padding-left: 5rem;
+}
+
+.Test-questionmaincontainer {
+  margin-top: 2rem;
 }

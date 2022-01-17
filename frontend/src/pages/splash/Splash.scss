@@ -12,7 +12,7 @@
 .Splash-welcome {
   font-family: GoldplayAltBold;
   font-weight: 700 !important;
-  font-size: 1.375rem;
+  font-size: 2rem;
   text-align: center !important;
 }
 
@@ -20,14 +20,13 @@
   font-family: GoldplayLight;
   line-height: 1.5;
   font-weight: 500;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   color: #3d5e5f !important;
   text-align: center !important;
 }
 
 .Splash-nameinputmaincontainer {
   background-color: #eeebe3;
-  min-height: 7rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +44,7 @@
 .Splash-namerequest {
   font-family: GoldplayAltBold;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.25rem;
   text-align: center;
   padding: 0rem 3pc;
 }
