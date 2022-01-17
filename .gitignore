@@ -87,10 +87,6 @@ db.sqlite3-journal
 staticfiles
 static
 
-# Requirements
-requirements.txt
-requirements-dev.txt
-
 # personal todo list
 todolist.txt
 
