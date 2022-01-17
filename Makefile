@@ -13,11 +13,21 @@ install:
 	pip-compile
 	pip-compile requirements-dev.in
 	pip-sync requirements.txt requirements-dev.txt
-	pre-commit install
-	pre-commit run --all-files
 	cd frontend && yarn install && yarn build && cd ..
 	make move-static-files
 	make collectstatic
+
+lint:
+	black .
+	cd frontend && yarn prettier --write .
+	pre-commit run --all-files
+
+install_pre_commit:
+	pre-commit install
+	make lint
+
+seed:
+	python manage.py seed
 
 wsgi-server:
 	waitress-serve config.wsgi:application
@@ -32,7 +42,7 @@ migrate:
 	python manage.py migrate
 
 resetmigrate:
-	python manage.py migrate zero
+	python manage.py migrate backend zero
 
 showmigrations:
 	python manage.py showmigrations

@@ -1,27 +1,28 @@
-from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from config.models import ActiveTimestampedModel
+from config.models import TimestampedModel, ActiveTimestampedModel
 
 
 class Question(ActiveTimestampedModel):
-    content = models.TextField(length=256, blank=False)
+    content = models.TextField(max_length=256, blank=False)
 
     def __str__(self):
         return "%s" % (self.content)
 
 
 class Answer(ActiveTimestampedModel):
-    content = models.TextField(length=256, blank=False)
-    question = models.ForeignKey(Question)
+    content = models.TextField(max_length=256, blank=False)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    personality_level = models.IntegerField(blank=False)
 
     def __str__(self):
         return "%s" % (self.content)
 
 
-class User(AbstractUser, ActiveTimestampedModel):
-    email = None  # disable the AbstractUser.email field
-    username = models.TextField(max_length=64)
+class Result(TimestampedModel):
+    description = models.TextField(max_length=512, blank=False)
+    personality_class = models.TextField(max_length=64, blank=False)
+    value = models.IntegerField(blank=False, unique=True)
 
     def __str__(self):
-        return self.username
+        return "%s" % (self.description)
