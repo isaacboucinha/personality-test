@@ -12,7 +12,9 @@ class Question(ActiveTimestampedModel):
 
 class Answer(ActiveTimestampedModel):
     content = models.TextField(max_length=256, blank=False)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(
+        Question, related_name="answers", on_delete=models.CASCADE
+    )
     personality_level = models.IntegerField(blank=False)
 
     def __str__(self):

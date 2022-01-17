@@ -1,30 +1,26 @@
 import "./OptionPicker.scss";
 
 import React from "react";
-
-interface Options {
-  id: number;
-  text: string;
-}
+import IAnswerData from "../../types/answer.type";
 
 interface OptionPickerProps {
-  options: Options[];
+  options: IAnswerData[];
   onOptionChange: Function;
-  currentlyPickedOption: number;
+  currentlyPickedOption: string;
   children?: React.ReactNode;
 }
 
 function OptionPicker(props: OptionPickerProps) {
   const handleKeyEvent = (
     event: React.KeyboardEvent<HTMLLabelElement>,
-    id: number
+    id: string
   ) => {
     if (event.code === "Enter") props.onOptionChange(id);
   };
 
   return (
     <div className="OptionPicker-questionoptions">
-      {props.options.map(({ id, text }) => {
+      {props.options.map(({ id, content }) => {
         return (
           <label
             className="OptionPicker-optioncontainer"
@@ -32,7 +28,7 @@ function OptionPicker(props: OptionPickerProps) {
             key={`${id}`}
             onKeyDown={(e) => handleKeyEvent(e, id)}
           >
-            {text}
+            {content}
             <input
               className="OptionPicker-optioninput"
               type="checkbox"
