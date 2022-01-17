@@ -32,7 +32,7 @@ function Result() {
         <h1 className="Result-intro">Ok, the results are in!</h1>
         <div className="Result-regrettablesummary">
           <h2 className="Result-obnoxiousintroduction">
-            According to our super-duper metrics and analisys, your personality
+            According to our super-duper metrics and analysis, your personality
             type is:
           </h2>
           <h2 className="Result-personalitytype">100% Introvert</h2>

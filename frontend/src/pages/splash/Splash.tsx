@@ -13,6 +13,7 @@ function Splash() {
   const [username, setUsername] = React.useState("");
 
   const routeChange = () => {
+    if (username === "") return;
     setIsShowing(false);
     setFadeHasBeenTriggered(true);
     setTimeout(() => {
