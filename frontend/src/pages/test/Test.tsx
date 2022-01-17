@@ -3,13 +3,12 @@ import "./Test.scss";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import QuestionDataService from "../../services/question.service"
+import QuestionDataService from "../../services/question.service";
 
 import FadeableContainer from "../../components/fadeable-container/FadeableContainer";
 import Button from "../../components/button/Button";
 import OptionPicker from "../../components/option-picker/OptionPicker";
 import { IQuestion } from "../../types/question.type";
-
 
 function Test() {
   const navigate = useNavigate();
@@ -56,14 +55,14 @@ function Test() {
   };
 
   useEffect(() => {
-    setFadeHasBeenTriggered(true)
-    setQuestionFadeHasBeenTriggered(true)
+    setFadeHasBeenTriggered(true);
+    setQuestionFadeHasBeenTriggered(true);
     const fetchQuestions = async () => {
       QuestionDataService.getAll().then((res) => {
-        setQuestions(res.data.results)
-        setFadeHasBeenTriggered(false)
-        setQuestionFadeHasBeenTriggered(false)
-      })
+        setQuestions(res.data.results);
+        setFadeHasBeenTriggered(false);
+        setQuestionFadeHasBeenTriggered(false);
+      });
     };
 
     fetchQuestions();
@@ -83,38 +82,40 @@ function Test() {
 
   return (
     <>
-    {
-    questions.length !== 0 &&
-    <FadeableContainer isShowing={isShowing}>
-      <div className="Test-maincontent">
-        <h1 className="Test-title">Test</h1>
-        <div className="Test-questionmaincontainer">
-          <FadeableContainer isShowing={questionIsShowing}>
+      {questions.length !== 0 && (
+        <FadeableContainer isShowing={isShowing}>
+          <div className="Test-maincontent">
+            <h1 className="Test-title">Test</h1>
             <div className="Test-questionmaincontainer">
-              <div className="Test-questioncontainer">
-                <span className="Test-questiontitle">
-                  Question {questionNumber + 1}:{" "}
-                </span>
-                <span className="Test-questioncontent">
-                  {questions[questionNumber].content}
-                </span>
-              </div>
-              <div className="Test-questionoptions">
-                <OptionPicker
-                  options={questions[questionNumber].answers}
-                  onOptionChange={handleOptionPicking}
-                  currentlyPickedOption={currentAnswer}
-                />
-              </div>
-              <Button onClick={handleButtonClick} disabled={currentAnswer === ""}>
-                Next question
-              </Button>
+              <FadeableContainer isShowing={questionIsShowing}>
+                <div className="Test-questionmaincontainer">
+                  <div className="Test-questioncontainer">
+                    <span className="Test-questiontitle">
+                      Question {questionNumber + 1}:{" "}
+                    </span>
+                    <span className="Test-questioncontent">
+                      {questions[questionNumber].content}
+                    </span>
+                  </div>
+                  <div className="Test-questionoptions">
+                    <OptionPicker
+                      options={questions[questionNumber].answers}
+                      onOptionChange={handleOptionPicking}
+                      currentlyPickedOption={currentAnswer}
+                    />
+                  </div>
+                  <Button
+                    onClick={handleButtonClick}
+                    disabled={currentAnswer === ""}
+                  >
+                    Next question
+                  </Button>
+                </div>
+              </FadeableContainer>
             </div>
-          </FadeableContainer>
-        </div>
-      </div>
-    </FadeableContainer>
-    }
+          </div>
+        </FadeableContainer>
+      )}
     </>
   );
 }
