@@ -65,9 +65,11 @@ function Splash() {
             />
           </div>
         </div>
-        <Button onClick={routeChange} disabled={username === ""}>
-          Let's go!
-        </Button>
+        <div className="Splash-buttoncontainer">
+          <Button onClick={routeChange} disabled={username === ""}>
+            Let's go!
+          </Button>
+        </div>
       </div>
     </FadeableContainer>
   );

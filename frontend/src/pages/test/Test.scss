@@ -34,3 +34,34 @@
 .Test-questionmaincontainer {
   margin-top: 2rem;
 }
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .Test-maincontent {
+    padding: 0;
+  }
+
+  .Test-questioncontainer {
+    padding-bottom: 1rem;
+  }
+
+  .Test-questionoptions {
+    padding: 0;
+  }
+
+  .Test-questionmaincontainer {
+    margin: 0;
+    padding: 0;
+  }
+
+  .Test-title {
+    margin: 0;
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  .Test-maincontent {
+    padding: 0;
+  }
+}

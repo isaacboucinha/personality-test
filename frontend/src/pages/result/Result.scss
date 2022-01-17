@@ -38,3 +38,14 @@
 .Result-confusingexplanation {
   padding-bottom: 4rem;
 }
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .Result-maincontent {
+    padding: 0;
+  }
+
+  .Result-regrettablesummary {
+    margin-top: 0;
+  }
+}

@@ -23,3 +23,10 @@
   color: #f5f3ee;
   font-size: 1.5pc;
 }
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .Header-title {
+    display: none;
+  }
+}

@@ -16,6 +16,10 @@
       border-width: 0.3rem;
     }
   }
+
+  &:focus-visible {
+    outline: 0;
+  }
 }
 
 .OptionPicker-optioninput {

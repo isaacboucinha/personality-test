@@ -65,3 +65,44 @@
     outline-width: 0;
   }
 }
+
+.Splash-buttoncontainer {
+  padding: 1rem;
+}
+
+/* For Mobile */
+@media screen and (max-width: 440px) {
+  .Splash-maincontent {
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .Splash-nameinput {
+    margin: 0;
+  }
+
+  .Splash-welcome {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 440px) and (max-width: 540px) {
+  .Splash-maincontent {
+    padding: 0;
+  }
+
+  .Splash-nameinput {
+    margin: 0;
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 1080px) {
+  .Splash-maincontent {
+    padding: 0;
+  }
+
+  .Result-regrettablesummary {
+    margin-top: 0;
+  }
+}
