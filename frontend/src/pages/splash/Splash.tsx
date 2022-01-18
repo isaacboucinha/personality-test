@@ -14,6 +14,7 @@ function Splash() {
 
   const routeChange = () => {
     if (username === "") return;
+    localStorage.setItem("username", username);
     setIsShowing(false);
     setFadeHasBeenTriggered(true);
     setTimeout(() => {

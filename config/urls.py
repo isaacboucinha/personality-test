@@ -27,6 +27,7 @@ router.register(r"answers", api.AnswerViewSet)
 urlpatterns = [
     # backoffice is disabled
     # path('admin/', admin.site.urls),
+    path("api/result/calculate/", api.ResultCalculateView.as_view()),
     path("api/", include(router.urls)),
     path("api/auth/", include("rest_framework.urls")),
     re_path(r"", frontend.catchall),

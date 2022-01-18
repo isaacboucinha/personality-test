@@ -1,12 +1,12 @@
 import "./OptionPicker.scss";
 
 import React from "react";
-import IAnswerData from "../../types/answer.type";
+import IAnswer from "../../types/answer.type";
 
 interface OptionPickerProps {
-  options: IAnswerData[];
+  options: IAnswer[];
   onOptionChange: Function;
-  currentlyPickedOption: string;
+  currentlyPickedOption: IAnswer | null;
   children?: React.ReactNode;
 }
 
@@ -34,13 +34,13 @@ function OptionPicker(props: OptionPickerProps) {
               type="checkbox"
               id={`${id}`}
               name={`${id}`}
-              checked={props.currentlyPickedOption === id}
+              checked={props.currentlyPickedOption?.id === id}
               readOnly={true}
               onClick={() => props.onOptionChange(id)}
             />
             <div
               className={`OptionPicker-optioncheckmark ${
-                props.currentlyPickedOption === id ? "" : "unchecked"
+                props.currentlyPickedOption?.id === id ? "" : "unchecked"
               }`}
             />
           </label>

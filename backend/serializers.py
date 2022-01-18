@@ -20,4 +20,4 @@ class QuestionSerializer(serializers.HyperlinkedModelSerializer):
 class ResultSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Result
-        fields = ["description, personality_class"]
+        fields = ["description", "personality_class"]
