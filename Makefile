@@ -16,6 +16,8 @@ install:
 	cd frontend && yarn install && yarn build && cd ..
 	make move-static-files
 	make collectstatic
+	make migrate
+	make seed
 
 lint:
 	black .
